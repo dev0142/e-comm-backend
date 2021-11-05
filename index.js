@@ -24,9 +24,14 @@ app.use(cors({
   }));
 
 //adding products
+<<<<<<< HEAD
 
 app.get("/",(req,res)=>{
     res.send("hii");
+=======
+app.get('/',(req,res)=>{
+res.send("hiiii");
+>>>>>>> 5039f7962ca17c95be76141589bab14cb6932ba8
 })
 app.post('/addproduct',async(req,res)=>{
     try {
@@ -109,6 +114,6 @@ app.get('/edit/:id',async(req,res)=>{
 
 
 
-app.listen(process.env.PORTs || 3002,()=>{
+app.listen(process.env.PORT || 3002,()=>{
     console.log(`server running at port 3002`);
 })
