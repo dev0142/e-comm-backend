@@ -24,9 +24,7 @@ app.use(cors({
   }));
 
 //adding products
-app.get('/',(req,res)=>{
-res.send("hiiii");
-})
+app.get('/',(req,res)=>{res.send("hiiii");})
 app.post('/addproduct',async(req,res)=>{
     try {
         
@@ -83,6 +81,16 @@ app.get("/fetch",async(req,res)=>{
         
         const allproduct=await ProductData.find({});
         res.status(200).send(allproduct);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+app.get("/fetch/:id",async(req,res)=>{
+    try {
+        var productId=req.params['id'];
+        const product=await ProductData.findOne({_id:productId});
+        res.status(200).send(product.data);
     } catch (error) {
         console.log(error);
     }
