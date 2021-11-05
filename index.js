@@ -90,7 +90,7 @@ app.get("/fetch/:id",async(req,res)=>{
     try {
         var productId=req.params['id'];
         const product=await ProductData.findOne({_id:productId});
-        res.status(200).send(product.data);
+        res.status(200).send(product);
     } catch (error) {
         console.log(error);
     }
