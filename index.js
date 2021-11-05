@@ -24,6 +24,10 @@ app.use(cors({
   }));
 
 //adding products
+
+app.get("/",(req,res)=>{
+    res.send("hii");
+})
 app.post('/addproduct',async(req,res)=>{
     try {
         
