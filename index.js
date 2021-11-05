@@ -108,6 +108,6 @@ app.get('/edit/:id',async(req,res)=>{
 
 
 
-app.listen(process.env.PORTs || 3002,()=>{
+app.listen(process.env.PORT || 3002,()=>{
     console.log(`server running at port 3002`);
 })
