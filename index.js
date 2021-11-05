@@ -24,14 +24,8 @@ app.use(cors({
   }));
 
 //adding products
-<<<<<<< HEAD
-
-app.get("/",(req,res)=>{
-    res.send("hii");
-=======
 app.get('/',(req,res)=>{
 res.send("hiiii");
->>>>>>> 5039f7962ca17c95be76141589bab14cb6932ba8
 })
 app.post('/addproduct',async(req,res)=>{
     try {
