@@ -46,26 +46,15 @@ app.post('/addproduct',async(req,res)=>{
 })
 
 //editing the products
-app.post('/edit/:id',async(req,res)=>{
+app.post('/edit',async(req,res)=>{
     try {
-        var editProduct=req.params['id'];
-        const{name,brand,category,description,quantity,price,discount}=req.body;
-        const images=req.body.images;
-        if(!images)
+        
+       var productinfoupdate;
+        
+        for(var i=0;i<req.body.length;i++)
         {
-           res.status(401).send({message:"Please upload the image"});
+        productinfoupdate=await ProductData.updateMany({_id:req.body[i]._id},req.body[i]);
         }
-        const productinfoupdate=await ProductData.findOneAndUpdate({_id:editProduct},
-            {
-                name:name,
-                brand:brand,
-                category:category,
-                description:description,
-                quantity:quantity,
-                price:price,
-                discount:discount,
-                images:images,
-            });
         if(productinfoupdate)
         {
             res.status(200).send({message:"product updated successfully"});
