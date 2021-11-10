@@ -8,7 +8,10 @@ dotenv.config({path:'./config.env'});
 require('./database/conn');
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb', extended: true,parameterLimit:50000}));
-app.use(compression());
+app.use(compression( {   
+    level:6,
+    threshold:1*1000
+}));
 
 var allowedDomains = ['http://localhost:3002','http://localhost:3001','http://localhost:3000','https://bhoomihillsnaturalsfrontend.herokuapp.com'];
 
