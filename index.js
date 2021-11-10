@@ -8,7 +8,7 @@ require('./database/conn');
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb', extended: true,parameterLimit:50000}));
 
-var allowedDomains = ['http://localhost:3000','https://bhoomihillsnaturalsfrontend.herokuapp.com'];
+var allowedDomains = ['http://localhost:3002','http://localhost:3001','http://localhost:3000','https://bhoomihillsnaturalsfrontend.herokuapp.com'];
 
 app.use(cors({
     origin: function (origin, callback) {
