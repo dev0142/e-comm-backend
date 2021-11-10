@@ -27,9 +27,6 @@ const ProductData = new mongoose.Schema({
     discount:{
         type:Number,
         required:true
-    },
-    images:{
-        type:Array,
     }
 })
 

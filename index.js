@@ -29,8 +29,8 @@ app.post('/addproduct',async(req,res)=>{
     try {
         
     const{name,brand,category,description,quantity,price,discount}=req.body;
-    const images=req.body.images;
-    const newProduct=new ProductData({name,category,brand,description,quantity,price,discount,images});
+    // const images=req.body.images;
+    const newProduct=new ProductData({name,category,brand,description,quantity,price,discount});
                 newProduct.save().then(()=>{
                     res.status(200).send({message:"product added"});
 
