@@ -13,7 +13,7 @@ app.use(compression( {
     threshold:1*1000
 }));
 
-var allowedDomains = ['http://localhost:3002','http://localhost:3001','http://localhost:3000','https://bhoomihillsnaturalsfrontend.herokuapp.com'];
+var allowedDomains = ['http://localhost:3002','http://localhost:3001','http://localhost:3000','https://bhoomihillsnaturalsfrontend.herokuapp.com','http://127.0.0.1:3000'];
 
 app.use(cors({
     origin: function (origin, callback) {
